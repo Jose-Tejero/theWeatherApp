@@ -34,7 +34,7 @@ const Card = ({
                 <>
                     <div className='Container' >
                         <div className="main">
-                            <h2>{name}, {country}</h2>
+                            <h2>{name}</h2>
                             <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
                             {
                                 toSwitch ? (
