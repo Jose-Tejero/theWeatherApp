@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html {
+  background: linear-gradient(to top, rgb(226, 161, 40), rgb(230, 193, 126));
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: max-content;  /*Arreglar esta altura*/
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  position: relative;
+  border: 0 solid transparent;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-width: 1px;
+  position: relative;
+  top: -250px;
+  left: -275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.Container {
+  width: 300px;
+  height: 600px;
+  background-color: white;
+  border-radius: 30px;
+  position: relative;
+  justify-content: center;  
+}
+
+.main {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 30px;
+  position: absolute;
+  background-image: url(/src/images/night.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: moving 60s ease-in-out infinite alternate;
+}
+
+.Use-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid orange;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+@keyframes moving {
+  0% { 
+    background-position: left;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-position: right;
   }
+}
+
+.datas {
+  position: relative;
+  top: 300px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.item-1 {
+  grid-column: 1 / 3;
+}
+
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5 {
+  border-bottom: 3px solid orange;
+  margin: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
