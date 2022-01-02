@@ -19,15 +19,6 @@ function App() {
     setToSwitch(!toSwitch);
   }
 
-  //console.log(toSwitch);
-
-  if ( toSwitch ) {
-    parameter = units.metric;    
-  }
-  else {
-    parameter = units.standard
-  }
-
   useEffect(() => {
     const handleError = () => {
       console.log("No permitió acceder a la ubicación");
@@ -45,7 +36,7 @@ function App() {
     navigator.geolocation.getCurrentPosition(success, handleError)
     console.log("Soy handle")
 
-  }, [parameter]);
+  }, []);
 
   console.log("Estoy en App.js")
   console.log(weather)

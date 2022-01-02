@@ -1,11 +1,9 @@
 import React from 'react';
 
 const Card = ({
-        timezone,
         sunrise,
         sunset,
         name,
-        country,
         icon,
         temp,
         main,
@@ -39,9 +37,9 @@ const Card = ({
                             {
                                 toSwitch ? (
                                     <>
-                                        <h2>{Math.floor(temp)} °C</h2>
+                                        <h2>{Math.floor(temp - 273.15)} °C</h2>
                                         <p>{main}</p>
-                                        <p>Feels like: {Math.floor(feels_like)} °C</p>
+                                        <p>Feels like: {Math.floor(feels_like - 273.15)} °C</p>
                                     </>
                                 ) : (                        
                                     <>
