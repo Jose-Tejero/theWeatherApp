@@ -19,8 +19,6 @@ const Card = ({
     const sunsetTime = new Date((sunset*1000)).toTimeString().split(' ');
     const sunsetHM = sunsetTime[0].split(':');
 
-    console.log("Entré a Card.js")
-
     return (
         <>
             {

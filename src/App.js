@@ -1,16 +1,12 @@
 import './App.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import LineChart from './components/BarChart';
 import Card from './components/Card';
 import 'normalize.css'
 
 function App() {
 
-  let parameter = "";
-  const units = {
-    metric: "&units=metric",
-    standard: ""
-  }
   const [ weather, setWeather ] = useState(null);
   const [ loader, setLoader ] = useState(true);
   const [ toSwitch, setToSwitch ] = useState(true);
@@ -34,11 +30,9 @@ function App() {
     }
 
     navigator.geolocation.getCurrentPosition(success, handleError)
-    console.log("Soy handle")
 
   }, []);
 
-  console.log("Estoy en App.js")
   console.log(weather)
 
   return (
@@ -51,7 +45,7 @@ function App() {
         name = {weather?.timezone}
         icon = {weather?.current?.weather?.[0]?.icon}
         temp = {weather?.current?.temp}
-        main = {weather?.weather?.[0].main}
+        main = {weather?.current?.weather?.[0].main}
         feels_like = {weather?.current?.feels_like}
         humidity = {weather?.current?.humidity}
         pressure = {weather?.current?.pressure}
@@ -59,6 +53,9 @@ function App() {
         toSwitch={toSwitch}
       />
       <button onClick={handleSwitch} >Switch</button>
+      <div className="graph">
+        <LineChart historicalTime= {weather} />
+      </div>
     </div>
   );
 }
