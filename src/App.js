@@ -53,15 +53,29 @@ function App() {
         toSwitch={toSwitch}
       />
       <button onClick={handleSwitch} >Switch</button>
-      <div className="graph">
-        <LineChart 
-          data1= {weather?.hourly?.[0]?.temp} 
-          data2= {weather?.hourly?.[1]?.temp}
-          data3= {weather?.hourly?.[2]?.temp}
-          data4= {weather?.hourly?.[3]?.temp}
-          data5= {weather?.hourly?.[4]?.temp}
-          />
-      </div>
+      {
+        toSwitch ? (
+          <div className="graph">
+            <LineChart 
+              data1= {weather?.hourly?.[0]?.temp - 273.15} 
+              data2= {weather?.hourly?.[1]?.temp - 273.15}
+              data3= {weather?.hourly?.[2]?.temp - 273.15}
+              data4= {weather?.hourly?.[3]?.temp - 273.15}
+              data5= {weather?.hourly?.[4]?.temp - 273.15}
+              />
+          </div>
+        ) : (                        
+          <div className="graph">
+            <LineChart 
+              data1= {weather?.hourly?.[0]?.temp} 
+              data2= {weather?.hourly?.[1]?.temp}
+              data3= {weather?.hourly?.[2]?.temp}
+              data4= {weather?.hourly?.[3]?.temp}
+              data5= {weather?.hourly?.[4]?.temp}
+              />
+          </div>            
+        )
+      }
     </div>
   );
 }
