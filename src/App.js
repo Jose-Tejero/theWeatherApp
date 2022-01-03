@@ -52,7 +52,7 @@ function App() {
         loader={loader} 
         toSwitch={toSwitch}
         />
-      <button onClick={handleSwitch} >Switch</button>                     
+      <button onClick={handleSwitch} >C-K</button>                     
       <div className="graph">
         <LineChart 
           data1= {weather?.hourly?.[0]?.temp} 
@@ -61,6 +61,11 @@ function App() {
           data4= {weather?.hourly?.[3]?.temp}
           data5= {weather?.hourly?.[4]?.temp}
           toSwitch={toSwitch}
+          time1= {weather?.hourly?.[0]?.dt} 
+          time2= {weather?.hourly?.[1]?.dt}
+          time3= {weather?.hourly?.[2]?.dt}
+          time4= {weather?.hourly?.[3]?.dt}
+          time5= {weather?.hourly?.[4]?.dt}
           />
       </div>            
     </div>
