@@ -1,7 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import LineChart from './components/BarChart';
+import LineChart from './components/LineChart';
 import Card from './components/Card';
 import 'normalize.css'
 
@@ -54,7 +54,13 @@ function App() {
       />
       <button onClick={handleSwitch} >Switch</button>
       <div className="graph">
-        <LineChart historicalTime= {weather} />
+        <LineChart 
+          data1= {weather?.hourly?.[0]?.temp} 
+          data2= {weather?.hourly?.[1]?.temp}
+          data3= {weather?.hourly?.[2]?.temp}
+          data4= {weather?.hourly?.[3]?.temp}
+          data5= {weather?.hourly?.[4]?.temp}
+          />
       </div>
     </div>
   );
