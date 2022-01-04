@@ -60,7 +60,7 @@ const LineChart = ({
     const dataC = {
         datasets: [
             {
-                label: 'Temp/Hr',
+                label: 'Temp vs hr',
                 data: [ data1 - 273.15, data2 - 273.15, data3 - 273.15, data4 - 273.15, data5 - 273.15 ],
                 tension: 0.8,
                 borderColor: "orange",
