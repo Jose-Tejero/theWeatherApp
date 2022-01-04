@@ -23,7 +23,7 @@ function App() {
     const success = position => {
       const lat = position.coords.latitude
       const lon = position.coords.longitude
-      axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${lon}&dt=${1641151877}&appid=a41591c088df2f82f4b32a21c5358474`)
+      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=a41591c088df2f82f4b32a21c5358474`)
         .then(res => setWeather(res.data))
         .catch(error => console.log(error.res));
       setLoader(false);
@@ -34,6 +34,9 @@ function App() {
   }, []);
 
   console.log(weather)
+
+  const now = (new Date());
+  console.log(now.getDate())
 
   return (
     <div className="App">

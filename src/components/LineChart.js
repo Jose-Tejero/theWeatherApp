@@ -55,8 +55,6 @@ const LineChart = ({
     const timeTime5 = new Date(time5*1000).toTimeString().split(' ');
     const timeH5 = timeTime5[0].split(':');
 
-    console.log(timeH1[0])
-
     const label = [timeH1[0], timeH2[0], timeH3[0], timeH4[0], timeH5[0]];
 
     const dataC = {
